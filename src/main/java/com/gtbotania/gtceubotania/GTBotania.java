@@ -1,5 +1,6 @@
 package com.gtbotania.gtceubotania;
 
+import com.gtbotania.gtceubotania.common.data.GTBotaniaItems;
 import com.gtbotania.gtceubotania.common.data.materials.GTBMaterials;
 import com.gtbotania.gtceubotania.datagen.GTBDatagen;
 
@@ -34,8 +35,14 @@ public class GTBotania {
 
     public static final String MOD_ID = "gtbotania";
     public static final Logger LOGGER = LogManager.getLogger();
-
-    public static RegistryEntry<CreativeModeTab> GTB_CREATIVE_TAB;
+    public static RegistryEntry<CreativeModeTab> GTB_CREATIVE_TAB = REGISTRATE
+        .defaultCreativeTab(GTBotania.MOD_ID,
+                builder -> builder
+                        .displayItems( new GTCreativeModeTabs.RegistrateDisplayItemsGenerator( MOD_ID, REGISTRATE))
+                        .title(REGISTRATE.addLang("itemGroup", GTBotania.id("creative_tab"), "Gregtania"))
+                        .icon(GTBotaniaItems.RUNE_TABLET::asStack)
+                        .build())
+            .register();
 
     public GTBotania() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();

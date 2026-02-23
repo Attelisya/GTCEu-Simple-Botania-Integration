@@ -1,5 +1,6 @@
 package com.gtbotania.gtceubotania;
 
+import com.gtbotania.gtceubotania.common.data.GTBotaniaItems;
 import com.gtbotania.gtceubotania.common.data.materials.GTBElements;
 import com.gtbotania.gtceubotania.common.registry.GTBRegistry;
 
@@ -26,6 +27,10 @@ public class GTBAddon implements IGTAddon {
     @Override
     public String addonModId() {
         return GTBotania.MOD_ID;
+    }
+
+    public static void init() {
+        GTBotaniaItems.init();
     }
 
     @Override
