@@ -39,7 +39,7 @@ public class GTBotania {
                     builder -> builder
                             .displayItems(new GTCreativeModeTabs.RegistrateDisplayItemsGenerator(MOD_ID, REGISTRATE))
                             .title(REGISTRATE.addLang("itemGroup", GTBotania.id("creative_tab"), "Gregtania"))
-//                            .icon()
+                            // .icon()
                             .build())
             .register();
 
